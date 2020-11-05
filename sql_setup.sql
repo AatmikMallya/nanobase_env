@@ -37,3 +37,100 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `Entries`;
+
+CREATE TABLE `Entries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `entryName` varchar(32) DEFAULT NULL,
+  `moleculeType` varchar(32) DEFAULT NULL,
+  `applicationType` varchar(32) DEFAULT NULL,
+  `modifications` varchar(32) DEFAULT NULL,
+  `datePublished` date DEFAULT NULL,
+  `dateUploaded` date DEFAULT NULL,
+  `uploaderName` varchar(32) DEFAULT NULL,
+  `publicationCitation` varchar(32) DEFAULT NULL,
+  `publicationAuthors` varchar(32) DEFAULT NULL,
+  `univFormatStruct` varchar(32) DEFAULT NULL,
+  `licensingInfo` varchar(32) DEFAULT NULL,
+  `structSize` int(11) DEFAULT NULL,
+  `length` int(11) DEFAULT NULL,
+  `public` tinyint(1) DEFAULT NULL,
+  `additionalTags` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `MoleculeType`;
+
+ CREATE TABLE `MoleculeType` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `molecType` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `MoleculeTypeJoin`;
+
+CREATE TABLE `MoleculeTypeJoin` (
+  `molecTypeId` int(11) DEFAULT NULL,
+  `entryId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `ApplicationType`;
+
+CREATE TABLE `ApplicationType` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `appType` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `ApplicationTypeJoin`;
+
+CREATE TABLE `ApplicationTypeJoin` (
+  `appTypeId` int(11) DEFAULT NULL,
+  `entryId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `Modifications`;
+
+CREATE TABLE `Modifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `modType` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `ModificationsJoin`;
+
+CREATE TABLE `ModificationsJoin` (
+  `modId` int(11) DEFAULT NULL,
+  `entryId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `PublicationAuthors`;
+
+CREATE TABLE `PublicationAuthors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `authorName` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `PublicationAuthorsJoin`;
+
+CREATE TABLE `PublicationAuthorsJoin` (
+  `pubAuthorId` int(11) DEFAULT NULL,
+  `entryId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `AdditionalTags`;
+
+CREATE TABLE `AdditionalTags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tag` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `AdditionalTagsJoin`;
+
+CREATE TABLE `AdditionalTagsJoin` (
+  `tagId` int(11) DEFAULT NULL,
+  `entryId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
