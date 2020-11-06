@@ -37,7 +37,7 @@ CREATE TABLE `Structures` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
   `title` varchar(32) DEFAULT NULL,
-  `molecule` varchar(32) DEFAULT NULL,
+  `moleculeType` varchar(32) DEFAULT NULL,
   `application` varchar(255) DEFAULT NULL,
   `modifications` varchar(255) DEFAULT NULL,
   `keywords` varchar(32) DEFAULT NULL,

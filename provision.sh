@@ -19,6 +19,7 @@ echo "now setting mySQL authentication"
 mysql -Bse "USE mysql; UPDATE user SET plugin='mysql_native_password' WHERE User='root'; FLUSH PRIVILEGES;"
 mysql -Bse "CREATE USER 'root'@'%'; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; FLUSH PRIVILEGES";
 #mysql -Bse "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; FLUSH PRIVILEGES;"
+mysql -Bse "DROP DATABASE IF EXISTS nanobase;"
 mysql -Bse "CREATE DATABASE nanobase CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
 mysql -Bse "source sql_setup.sql"
 service mysql restart
