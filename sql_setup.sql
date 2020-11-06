@@ -55,10 +55,10 @@ CREATE TABLE `Structures` (
 
 
 -- Tag tables
-DROP TABLE IF EXISTS `Application`;
-CREATE TABLE `Application` (
+DROP TABLE IF EXISTS `Applications`;
+CREATE TABLE `Applications` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `application` varchar(32) DEFAULT NULL,
+  `applications` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -88,25 +88,25 @@ CREATE TABLE `Authors` (
 DROP TABLE IF EXISTS `ApplicationJoin`;
 CREATE TABLE `ApplicationJoin` (
   `structureId` int(11) DEFAULT NULL,
-  `appplicationId` int(11) DEFAULT NULL,
+  `appplicationId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `ModificationsJoin`;
 CREATE TABLE `ModificationsJoin` (
   `structureId` int(11) DEFAULT NULL,
-  `modificationId` int(11) DEFAULT NULL,
+  `modificationId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `KeywordsJoin`;
 CREATE TABLE `KeywordsJoin` (
   `structureId` int(11) DEFAULT NULL,
-  `keywordId` int(11) DEFAULT NULL,
+  `keywordId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `AuthorsJoin`;
 CREATE TABLE `AuthorsJoin` (
   `structureId` int(11) DEFAULT NULL,
-  `authorId` int(11) DEFAULT NULL,
+  `authorId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -115,40 +115,40 @@ DROP TABLE IF EXISTS `structureFilesJoin`;
 CREATE TABLE `structureFilesJoin` (
   `structureId` int(11) DEFAULT NULL,
   `structureFile` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `ExpProtocolFilesJoin`;
 CREATE TABLE `ExpProtocolFilesJoin` (
   `structureId` int(11) DEFAULT NULL,
   `expProtocolFile` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `ExpResultsFilesJoin`;
 CREATE TABLE `ExpResultsFilesJoin` (
   `structureId` int(11) DEFAULT NULL,
   `expResultsFile` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `SimProtocolFilesJoin`;
 CREATE TABLE `SimProtocolFilesJoin` (
   `structureId` int(11) DEFAULT NULL,
   `simProtocolFile` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `SimResultsFilesJoin`;
 CREATE TABLE `SimResultsFilesJoin` (
   `structureId` int(11) DEFAULT NULL,
   `simResultsFile` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `ImageFilesJoin`;
 CREATE TABLE `ImageFilesJoin` (
   `structureId` int(11) DEFAULT NULL,
   `imageFile` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
