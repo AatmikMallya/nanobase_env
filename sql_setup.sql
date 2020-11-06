@@ -19,28 +19,24 @@ DROP TABLE IF EXISTS `Users`;
 
 CREATE TABLE `Users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(32) NOT NULL DEFAULT '',
+  `firstName` varchar(32) NOT NULL DEFAULT '',
+  `lastName` varchar(32) NOT NULL DEFAULT '',
+  `email` varchar(32) NOT NULL DEFAULT '',
+  `institution` varchar(32) NOT NULL DEFAULT '', 
   `password` varchar(64) NOT NULL DEFAULT '',
-  `group` int(1) NOT NULL,
   `creationDate` varchar(32) NOT NULL DEFAULT '',
   `administrator` tinyint(1) NOT NULL DEFAULT 0,
-  `privaleged` tinyint(1) NOT NULL DEFAULT 0,
-  `verified` varchar(16) NOT NULL DEFAULT 'FALSE',
-  `verifycode` varchar(32),
-  `firstName` varchar(32),
-  `lastName` varchar(32),
-  `institution` varchar(32), 
-  `jobLimit` tinyint(1) NOT NULL DEFAULT 4,
-  `timeLimit` int(4) NOT NULL DEFAULT 6912000,
+  `privileged` tinyint(1) NOT NULL DEFAULT 0,
+  `verified` tinyint(1) NOT NULL DEFAULT 0,
+  `verifycode` varchar(32) NOT NULL DEFAULT '',
   `resetToken` varchar(64) DEFAULT NULL,
   `resetTokenExpiration` int(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `Entries`;
+DROP TABLE IF EXISTS `Structures`;
 
-CREATE TABLE `Entries` (
+CREATE TABLE `Structures` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `entryName` varchar(32) DEFAULT NULL,
   `moleculeType` varchar(32) DEFAULT NULL,
@@ -62,7 +58,7 @@ CREATE TABLE `Entries` (
 
 DROP TABLE IF EXISTS `MoleculeType`;
 
- CREATE TABLE `MoleculeType` (
+CREATE TABLE `MoleculeType` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `molecType` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
