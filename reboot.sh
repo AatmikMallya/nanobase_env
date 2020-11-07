@@ -1,4 +1,4 @@
-cd /vagrant/nanobase
+cd /vagrant/nanobase/server
 #pull latest changes
 # git pull
 pwd
