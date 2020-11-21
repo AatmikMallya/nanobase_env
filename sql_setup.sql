@@ -34,24 +34,29 @@ CREATE TABLE `Users` (
 
 DROP TABLE IF EXISTS `Structures`;
 CREATE TABLE `Structures` (
+  -- Structure info
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
   `title` varchar(32) DEFAULT NULL,
-  `moleculeType` varchar(32) DEFAULT NULL,
+  `type` varchar(32) DEFAULT NULL,
   `description` varchar(300) DEFAULT NULL,
-  `datePublished` date DEFAULT NULL,
+  `size` int(11) DEFAULT NULL,
+  -- Publication info
+  `publishDate` date DEFAULT NULL,
   `citation` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `licensing` varchar(32) DEFAULT NULL,
-  `size` int(11) DEFAULT NULL,
-  `private` tinyint(1) DEFAULT NULL,
-  `dateUpload` date DEFAULT NULL,
+  -- Files
   `structureFiles` varchar(255) DEFAULT NULL,
   `expProtocolFiles` varchar(255) DEFAULT NULL,
   `expResultsFiles` varchar(255) DEFAULT NULL,
   `simProtocolFiles` varchar(255) DEFAULT NULL,
   `simResultsFiles` varchar(255) DEFAULT NULL,
   `imageFiles` varchar(255) DEFAULT NULL,
+  `displayImage` varchar(32) DEFAULT NULL,
+  -- Misc
+  `private` tinyint(1) DEFAULT NULL,
+  `uploadDate` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
