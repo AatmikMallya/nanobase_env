@@ -33,6 +33,30 @@ apt-get -y install python3.7-gdbm
 pip3 install --upgrade pip
 pip3 install bcrypt flask pathos yagmail pymysql pymysql-pool elasticsearch
 
+#install elasticsearch
+apt-get install default-jdk
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
+apt-get install apt-transport-https
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-7.x.list
+apt-get update && sudo apt-get install elasticsearch
+
+chown elasticsearch:elasticsearch -R /usr/share/elasticsearch
+chown elasticsearch:elasticsearch -R /var/log/elasticsearch
+chown elasticsearch:elasticsearch -R /var/lib/elasticsearch
+chown elasticsearch:elasticsearch -R /etc/default/elasticsearch
+chown elasticsearch:elasticsearch -R /etc/elasticsearch
+
+echo "START_DAEMON=true" >> /etc/default/elasticsearch
+echo "ES_USER=elasticsearch" >> /etc/default/elasticsearch
+echo "ES_GROUP=elasticsearch" >> /etc/default/elasticsearch
+#start elasticsearch
+/bin/systemctl daemon-reload
+/bin/systemctl enable elasticsearch.service
+systemctl enable elasticsearch
+systemctl start elasticsearch
+#stop elasticsearch
+# systemctl start elasticsearch.service
+# systemctl stop elasticsearch.service
 
 mkdir /users
 chown vagrant /users

@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 9001, host: 9001
   config.vm.provider "virtualbox" do |v|
-		v.memory = 1024
+		v.memory = 2048
 		v.cpus = 2
 		v.name = "nanobase"
 	end
