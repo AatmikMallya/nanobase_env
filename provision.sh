@@ -31,7 +31,7 @@ apt-get -y install python3.7
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
 apt-get -y install python3.7-gdbm
 pip3 install --upgrade pip
-pip3 install bcrypt flask pathos yagmail pymysql pymysql-pool
+pip3 install bcrypt flask pathos yagmail pymysql pymysql-pool elasticsearch
 
 
 mkdir /users
