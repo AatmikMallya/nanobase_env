@@ -54,6 +54,13 @@ CREATE TABLE `Structures` (
   `simResultsFiles` varchar(255) DEFAULT NULL,
   `imageFiles` varchar(255) DEFAULT NULL,
   `displayImage` varchar(64) DEFAULT NULL,
+  -- File Descriptions
+  `structureDescriptions` varchar(1010) DEFAULT NULL,
+  `expProtocolDescriptions` varchar(1010) DEFAULT NULL,
+  `expResultsDescriptions` varchar(1010) DEFAULT NULL,
+  `simProtocolDescriptions` varchar(1010) DEFAULT NULL,
+  `simResultsDescriptions` varchar(1010) DEFAULT NULL,
+  `imageDescriptions` varchar(1010) DEFAULT NULL,
   -- Misc
   `private` tinyint(1) DEFAULT NULL,
   `uploadDate` date DEFAULT NULL,
@@ -65,7 +72,7 @@ CREATE TABLE `Structures` (
 DROP TABLE IF EXISTS `Applications`;
 CREATE TABLE `Applications` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `applications` varchar(32) DEFAULT NULL,
+  `application` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
