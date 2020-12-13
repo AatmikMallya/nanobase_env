@@ -99,8 +99,8 @@ CREATE TABLE `Authors` (
 
 
 -- Join tables
-DROP TABLE IF EXISTS `ApplicationJoin`;
-CREATE TABLE `ApplicationJoin` (
+DROP TABLE IF EXISTS `ApplicationsJoin`;
+CREATE TABLE `ApplicationsJoin` (
   `structureId` int(11) DEFAULT NULL,
   `appplicationId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
