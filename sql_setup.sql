@@ -102,7 +102,7 @@ CREATE TABLE `Authors` (
 DROP TABLE IF EXISTS `ApplicationsJoin`;
 CREATE TABLE `ApplicationsJoin` (
   `structureId` int(11) DEFAULT NULL,
-  `appplicationId` int(11) DEFAULT NULL
+  `applicationId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `ModificationsJoin`;
