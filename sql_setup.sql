@@ -1,5 +1,7 @@
 USE nanobase;
 
+SET sql_mode='';
+
 DROP TABLE IF EXISTS `Jobs`;
 CREATE TABLE `Jobs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -39,28 +41,28 @@ CREATE TABLE `Structures` (
   `userId` int(11) DEFAULT NULL,
   `title` varchar(32) DEFAULT NULL,
   `type` varchar(32) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
+  `description` varchar(301) DEFAULT NULL,
   `size` int(11) DEFAULT NULL,
   -- Publication info
   `publishDate` date DEFAULT NULL,
-  `citation` varchar(255) DEFAULT NULL,
-  `link` varchar(255) DEFAULT NULL,
-  `licensing` varchar(32) DEFAULT NULL,
+  `citation` varchar(512) DEFAULT NULL,
+  `link` varchar(512) DEFAULT NULL,
+  `licensing` varchar(256) DEFAULT NULL,
   -- Files
-  `structureFiles` varchar(255) DEFAULT NULL,
-  `expProtocolFiles` varchar(255) DEFAULT NULL,
-  `expResultsFiles` varchar(255) DEFAULT NULL,
-  `simProtocolFiles` varchar(255) DEFAULT NULL,
-  `simResultsFiles` varchar(255) DEFAULT NULL,
-  `imageFiles` varchar(255) DEFAULT NULL,
-  `displayImage` varchar(64) DEFAULT NULL,
+  `structureFiles` varchar(1280) DEFAULT NULL,
+  `expProtocolFiles` varchar(1280) DEFAULT NULL,
+  `expResultsFiles` varchar(1280) DEFAULT NULL,
+  `simProtocolFiles` varchar(1280) DEFAULT NULL,
+  `simResultsFiles` varchar(1280) DEFAULT NULL,
+  `imageFiles` varchar(1280) DEFAULT NULL,
+  `displayImage` varchar(128) DEFAULT NULL,
   -- File Descriptions
-  `structureDescriptions` varchar(1010) DEFAULT NULL,
-  `expProtocolDescriptions` varchar(1010) DEFAULT NULL,
-  `expResultsDescriptions` varchar(1010) DEFAULT NULL,
-  `simProtocolDescriptions` varchar(1010) DEFAULT NULL,
-  `simResultsDescriptions` varchar(1010) DEFAULT NULL,
-  `imageDescriptions` varchar(1010) DEFAULT NULL,
+  `structureDescriptions` varchar(1280) DEFAULT NULL,
+  `expProtocolDescriptions` varchar(1280) DEFAULT NULL,
+  `expResultsDescriptions` varchar(1280) DEFAULT NULL,
+  `simProtocolDescriptions` varchar(1280) DEFAULT NULL,
+  `simResultsDescriptions` varchar(1280) DEFAULT NULL,
+  `imageDescriptions` varchar(1280) DEFAULT NULL,
   -- Misc
   `private` tinyint(1) DEFAULT NULL,
   `uploadDate` date DEFAULT NULL,
@@ -123,8 +125,6 @@ CREATE TABLE `AuthorsJoin` (
   `authorId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
-SET sql_mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 
 
 -- File Joins
