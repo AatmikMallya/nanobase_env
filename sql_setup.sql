@@ -1,6 +1,6 @@
 USE nanobase;
 
-SET sql_mode='';
+SET global sql_mode='';
 
 DROP TABLE IF EXISTS `Jobs`;
 CREATE TABLE `Jobs` (
@@ -125,6 +125,7 @@ CREATE TABLE `AuthorsJoin` (
   `authorId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+SET global sql_mode='';
 
 
 -- File Joins
