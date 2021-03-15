@@ -17,6 +17,6 @@ In order to get setup, follow these steps:
 	> ```cd nanobase_env; vagrant up```
 
 5. Give the machine a few minutes to finish provisioning. It needs to download an extensive set of libraries and frameworks. Once it's done, you will see a message in your terminal to indicate that server has launched.
-	> azDNA: Server now ready at :9000!
+	> azDNA: Server now ready at :8000!
 
-6. You can now visit http://localhost:9000 and use the server as desired.
+6. You can now visit http://localhost:8000 and use the server as desired.

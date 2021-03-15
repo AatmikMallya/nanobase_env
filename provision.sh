@@ -10,7 +10,7 @@ sudo cp /usr/lib/python3/dist-packages/apt_pkg.cpython-38-x86_64-linux-gnu.so /u
 
 apt-get update
 apt-get -y install nginx
-apt-get -y install gunicorn3
+apt-get -y install gunicorn
 apt-get -y install cmake
 apt-get -y install python3-pip
 apt-get -y install build-essential
@@ -51,26 +51,26 @@ pip3 install pymysql-pool
 pip3 install elasticsearch
 
 #install elasticsearch
-apt-get install default-jdk
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
-apt-get install apt-transport-https
-echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-7.x.list
-apt-get update && sudo apt-get install elasticsearch
+sudo apt-get install default-jdk
+sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo apt-get install apt-transport-https
+sudo echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update && sudo apt-get install elasticsearch
 
-chown elasticsearch:elasticsearch -R /usr/share/elasticsearch
-chown elasticsearch:elasticsearch -R /var/log/elasticsearch
-chown elasticsearch:elasticsearch -R /var/lib/elasticsearch
-chown elasticsearch:elasticsearch -R /etc/default/elasticsearch
-chown elasticsearch:elasticsearch -R /etc/elasticsearch
+sudo chown elasticsearch:elasticsearch -R /usr/share/elasticsearch
+sudo chown elasticsearch:elasticsearch -R /var/log/elasticsearch
+sudo chown elasticsearch:elasticsearch -R /var/lib/elasticsearch
+sudo chown elasticsearch:elasticsearch -R /etc/default/elasticsearch
+sudo chown elasticsearch:elasticsearch -R /etc/elasticsearch
 
-echo "START_DAEMON=true" >> /etc/default/elasticsearch
-echo "ES_USER=elasticsearch" >> /etc/default/elasticsearch
-echo "ES_GROUP=elasticsearch" >> /etc/default/elasticsearch
+sudo echo "START_DAEMON=true" >> sudo /etc/default/elasticsearch
+sudo echo "ES_USER=elasticsearch" >> sudo /etc/default/elasticsearch
+sudo echo "ES_GROUP=elasticsearch" >> sudo /etc/default/elasticsearch
 #start elasticsearch
-/bin/systemctl daemon-reload
-/bin/systemctl enable elasticsearch.service
-systemctl enable elasticsearch
-systemctl start elasticsearch
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+sudo systemctl enable elasticsearch
+sudo systemctl start elasticsearch
 #stop elasticsearch
 # systemctl start elasticsearch.service
 # systemctl stop elasticsearch.service
