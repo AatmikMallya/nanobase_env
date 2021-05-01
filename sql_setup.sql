@@ -39,30 +39,30 @@ CREATE TABLE `Structures` (
   -- Structure info
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
-  `title` varchar(32) DEFAULT NULL,
-  `type` varchar(32) DEFAULT NULL,
-  `description` varchar(301) DEFAULT NULL,
-  `size` int(11) DEFAULT NULL,
+  `title` varchar(128) DEFAULT NULL,
+  `type` TEXT DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
+  `size` int(32) DEFAULT NULL,
   -- Publication info
   `publishDate` date DEFAULT NULL,
-  `citation` varchar(256) DEFAULT NULL,
-  `link` varchar(256) DEFAULT NULL,
-  `licensing` varchar(256) DEFAULT NULL,
-  -- Files (10 files * 64 chars/filename + 10 separators + 2 prefix)
-  `structureFiles` varchar(652) DEFAULT NULL,
-  `expProtocolFiles` varchar(652) DEFAULT NULL,
-  `expResultsFiles` varchar(652) DEFAULT NULL,
-  `simProtocolFiles` varchar(652) DEFAULT NULL,
-  `simResultsFiles` varchar(652) DEFAULT NULL,
-  `imageFiles` varchar(652) DEFAULT NULL,
-  `displayImage` varchar(66) DEFAULT NULL,
-  -- File Descriptions (10 descriptions * 100 chars/description + 10 separators + 2 prefix)
-  `structureDescriptions` varchar(1012) DEFAULT NULL,
-  `expProtocolDescriptions` varchar(1012) DEFAULT NULL,
-  `expResultsDescriptions` varchar(1012) DEFAULT NULL,
-  `simProtocolDescriptions` varchar(1012) DEFAULT NULL,
-  `simResultsDescriptions` varchar(1012) DEFAULT NULL,
-  `imageDescriptions` varchar(1012) DEFAULT NULL,
+  `citation` TEXT DEFAULT NULL,
+  `link` TEXT DEFAULT NULL,
+  `licensing` TEXT DEFAULT NULL,
+  -- Files (10 files * 128 chars/filename + 10 separators + 2 prefix)
+  `structureFiles` TEXT DEFAULT NULL,
+  `expProtocolFiles` TEXT DEFAULT NULL,
+  `expResultsFiles` TEXT DEFAULT NULL,
+  `simProtocolFiles` TEXT DEFAULT NULL,
+  `simResultsFiles` TEXT DEFAULT NULL,
+  `imageFiles` TEXT DEFAULT NULL,
+  `displayImage` TEXT DEFAULT NULL,
+  -- File Descriptions (10 descriptions * 128 chars/description + 10 separators + 2 prefix)
+  `structureDescriptions` TEXT DEFAULT NULL,
+  `expProtocolDescriptions` TEXT DEFAULT NULL,
+  `expResultsDescriptions` TEXT DEFAULT NULL,
+  `simProtocolDescriptions` TEXT DEFAULT NULL,
+  `simResultsDescriptions` TEXT DEFAULT NULL,
+  `imageDescriptions` TEXT DEFAULT NULL,
   -- Misc
   `private` tinyint(1) DEFAULT NULL,
   `uploadDate` date DEFAULT NULL,
@@ -70,32 +70,59 @@ CREATE TABLE `Structures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+-- ALTER TABLE Structures MODIFY id int(11) NOT NULL AUTO_INCREMENT;
+-- ALTER TABLE Structures MODIFY userId int(11) DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY title varchar(128) DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY type TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY description TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY size int(32) DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY publishDate date DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY citation TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY link TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY licensing TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY structureFiles TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY expProtocolFiles TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY expResultsFiles TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY simProtocolFiles TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY simResultsFiles TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY imageFiles TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY displayImage TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY structureDescriptions TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY expProtocolDescriptions TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY expResultsDescriptions TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY simProtocolDescriptions TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY simResultsDescriptions TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY imageDescriptions TEXT DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY private tinyint(1) DEFAULT NULL;
+-- ALTER TABLE Structures MODIFY uploadDate date DEFAULT NULL;
+
+
 -- Tag tables
 DROP TABLE IF EXISTS `Applications`;
 CREATE TABLE `Applications` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `application` varchar(32) DEFAULT NULL,
+  `application` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `Modifications`;
 CREATE TABLE `Modifications` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `modification` varchar(32) DEFAULT NULL,
+  `modification` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `Keywords`;
 CREATE TABLE `Keywords` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `keyword` varchar(32) DEFAULT NULL,
+  `keyword` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `Authors`;
 CREATE TABLE `Authors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `author` varchar(32) DEFAULT NULL,
+  `author` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
